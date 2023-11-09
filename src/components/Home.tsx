@@ -38,10 +38,17 @@ const Home = () => {
   }, []);
   return (
     <Container>
-      <h1>THE SPACE NEWS</h1>
-      <Row>
+      <h1 className="text-white my-3">THE SPACE NEWS</h1>
+      <Row className="g-5">
         {news.map((r) => {
-          return <CardSpace title={r.title} imgUrl={r.image_url} key={r.id} />;
+          return (
+            <CardSpace
+              title={r.title}
+              imgUrl={r.image_url}
+              key={r.id}
+              date={r.published_at}
+            />
+          );
         })}
       </Row>
     </Container>
